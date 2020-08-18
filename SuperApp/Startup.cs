@@ -39,6 +39,7 @@ namespace SuperApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            
 
             app.UseAuthorization();
 
