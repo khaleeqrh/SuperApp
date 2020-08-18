@@ -26,9 +26,12 @@ namespace SuperApp.Controllers
 
         // GET api/<CustomerController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public CustomerModel Get(int id)
         {
-            return "value";
+            CustomerDataAcess customer = new CustomerDataAcess();
+            CustomerModel result = customer.GetCustomer(id);
+            return result;
+            //return "value";
         }
 
         // POST api/<CustomerController>
