@@ -25,7 +25,7 @@ namespace SuperApp.DataAcessLayer
         {
             using (IDbConnection cnn = new SQLiteConnection(@"Data Source =.\chinook.db; Version = 3;"))
             {
-                var data = cnn.Query<CustomerModel>($"SELECT * FROM Customers WHERE CustomerId = {id}").SingleOrDefault();
+                var data = cnn.Query<CustomerModel>($"SELECT * FROM Customers WHERE CustomerId = @ID;", new { ID = id }).SingleOrDefault();
                 return data;
             }
             
